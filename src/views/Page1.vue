@@ -1,12 +1,16 @@
 <script setup
         lang="ts"
 >
+const api = window.Telegram.WebApp;
 
+const data = api.initDataUnsafe;
 </script>
 
 <template>
   <div class="flex justify-center items-center w-full h-dvh flex-col">
     <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo">
+    {{ data.user.username }}
+    {{ data.user.id }}
 
     <router-link :to="{ name: 'page2' }" class="hover:underline">
       <button class="bg-green-600 text-white px-4 py-2 rounded-lg">
